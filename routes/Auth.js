@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const { User } = require("../model/user/User");
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const someOtherPlaintextPassword = 'iAmAhmed';
+
+
 router.post("/login", async (req, res) => {
     try {
         // Assuming you are expecting email and password in the request body
@@ -30,5 +35,7 @@ router.post("/login", async (req, res) => {
         });
     }
 });
+
+
 
 module.exports = router;
